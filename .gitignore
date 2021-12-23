@@ -34,3 +34,10 @@
 /yarn-error.log
 yarn-debug.log*
 .yarn-integrity
+
+
+# I don't want to show my secrets to
+/config/secrets.yml
+# what is the correct file to use (storage.yml or master.key?)
+
+
