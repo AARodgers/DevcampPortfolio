@@ -14,7 +14,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[6.1]
       t.string   :reset_password_token
       t.datetime :reset_password_sent_at
 
-      ## Rememberable
+      ## Pememberable
       t.datetime :remember_created_at
 
       ## Trackable
