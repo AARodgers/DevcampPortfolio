@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  # holds all the routes for devise
+  devise_for :users
   resources :portfolios, except: [:show]
   get 'angular-items', to: 'portfolios#angular'
   get 'portfolio/:id', to: 'portfolios#show', as: 'portfolio_show'
