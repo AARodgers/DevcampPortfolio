@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  # holds all the routes for devise
+  # to change the paths for the devise gem add what is after users ( ex.sign_in turns into login)
+  devise_for :users, path: '', path_names: {sign_in: 'login', sign_out: 'logout', sign_up: 'register'}
+
   resources :portfolios, except: [:show]
   get 'angular-items', to: 'portfolios#angular'
   get 'portfolio/:id', to: 'portfolios#show', as: 'portfolio_show'
