@@ -1,4 +1,8 @@
-<h1>Homepage</h1>
+<h1>Hi, <%= current_user.first_name if current_user %></h1>
+<%# will throw an error if there isn't a current user so need if b. if not logged in, there is no user
+and first_name will be called on a nil value %>
+<%# current_user is a devise method to see if the user is logged in, if so it gives us access to that users
+database record %>
 <p>Find me in app/views/pages/home.html.erb</p>
 
 <h1>Blog Posts</h1>

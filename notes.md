@@ -1,0 +1,2 @@
+- a virtual attribute lets you create a special attribute without putting it in the schema or doing a migration like 'first_name'
+- irb gives up a connection to the ruby vs. rails c which gives us access to the rails environment
