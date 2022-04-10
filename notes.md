@@ -24,4 +24,5 @@ Sessions:
   - good to use incognito tabs when working with sessions so you don't get them messed up
   - ex. http://[::1]:3000/portfolio/4?q=twitter ( everything after the q is a query), if you inspect the session, you will see it in QUERY_STRING =
   - sessions are not very secure and can get hacked easily so never put important data like credit card nums etc in it
-  - 
+  - going to an incognito tab starts a new session
+  
