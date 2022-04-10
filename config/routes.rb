@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   resources :portfolios, except: [:show]
   get 'angular-items', to: 'portfolios#angular'
   get 'portfolio/:id', to: 'portfolios#show', as: 'portfolio_show'
+  # porfolio is a specific route that takes in an id parameter and is mapped to the show action
 
   get 'about-me', to: 'pages#about'
   get 'contact', to: 'pages#contact'
