@@ -22,6 +22,7 @@ class BlogsController < ApplicationController
   # POST /blogs or /blogs.json
   def create
     @blog = Blog.new(blog_params)
+    # @blog.topic = Topic.last to solve the error of a new blog needing a topic or put belongs_to :topic, optional: true in models/blog.rb
 
     respond_to do |format|
       if @blog.save
@@ -68,7 +69,11 @@ class BlogsController < ApplicationController
       @blog = Blog.friendly.find(params[:id])
     end
 
-    # Only allow a list of trusted parameters through.
+    # Only allow a list of trusted parameters through. Don't allow parameters from internet, only let
+    # whitelist through. Title and body are the items we allow in our forms to then pass through to
+    # controller. If hacker put in some other form element, they could throw malicious code on server.
+    # can get rid of .permit(title and body) b. put config.action_controller.permit_all_parameters = true
+    # in config/application.rb
     def blog_params
       params.require(:blog).permit(:title, :body)
     end
