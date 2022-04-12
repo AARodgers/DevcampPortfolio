@@ -4,4 +4,5 @@ class ApplicationController < ActionController::Base
   # to include this module, is better practice to include a module here than put all of the logic/methods here
   include DeviseWhitelist
   include SetSource
+  include CurrentUserConcern
 end
