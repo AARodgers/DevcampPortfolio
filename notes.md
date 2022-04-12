@@ -28,3 +28,7 @@ Sessions:
 
 Null Object Pattern:
 - behavior you can do from controller to manage what websites if someone is logged in or if it is a guest
+
+Views:
+- by default Rails uses application layout file
+- 

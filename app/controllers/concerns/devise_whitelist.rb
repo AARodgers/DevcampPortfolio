@@ -17,6 +17,4 @@ module DeviseWhitelist
     devise_parameter_sanitizer.permit(:account_update, keys: [:name])
     # these are devise methods
   end
-
-
 end

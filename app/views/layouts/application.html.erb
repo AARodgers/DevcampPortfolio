@@ -1,8 +1,11 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>DevcampPortfolio</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title><%=@page_title %></title>
+    <%# is what is on tab in browser %>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="keywords" content="<%= @seo_keywords %>" />
+    <%# go to browser and click View PageSource, it shows the meta seo data%>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -13,6 +16,15 @@
   <body>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
+
+    <div>
+      <div><%= link_to "Home", root_path %></div>
+      <%# to find the proper route, in terminal do rails routes | grep pages and will see route methods%>
+      <div><%= link_to "About", about_me_path %></div>
+      <div><%= link_to "Contact", contact_path %></div>
+      <div><%= link_to "Blog", blogs_path %></div>
+      <div><%= link_to "Portfolio", portfolios_path %></div>
+    </div>
 <%# to find out which route to use, in terminal do rails routes | grep logout and then add path to end and pass in the method delete %>
 <%# you only want them to see logout button if they are already loggedin %>
     <% if current_user.is_a?(User) %>
@@ -22,6 +34,8 @@
       <%= link_to "Register", new_user_registration_path %>
       <%= link_to "Login", new_user_session_path %>
     <% end %>
+
+    <%# yield gives way or lets you slide in any of the other templates that are being called, like when you click on the blog or portfolio link above%>
     <%= yield %>
 
     <% if session[:source] %>
@@ -29,3 +43,5 @@
     <% end %>
   </body>
 </html>
+
+<%# what you put in the body here will appear on every page that uses this layout, by default it will be all%>
