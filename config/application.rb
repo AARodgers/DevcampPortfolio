@@ -23,6 +23,15 @@ module DevcampPortfolio
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 6.1
+    # config.action_controller.
+    #   permit_all_parameters = true
+    # can put above in if want to allow any parameters in the forms but not recommended because a hacker
+    # can inject malicious code into database
+
+
+    # action_controller is a mini framework inside of rails
+    # this overrides all parameters
+    # can take out .permits ....etc b. this overides it, it is false by default
 
     # Configuration for the application, engines, and railties goes here.
     #
