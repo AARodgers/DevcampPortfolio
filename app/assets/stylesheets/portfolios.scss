@@ -6,3 +6,8 @@ body {
   background-color: black;
   color: white;
 }
+
+.top a {
+  color: red;
+}
+/* says you want to apply styles to any components that have the class top and that have a link (hence the a)*/

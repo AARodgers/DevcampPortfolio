@@ -31,4 +31,14 @@ Null Object Pattern:
 
 Views:
 - by default Rails uses application layout file
-- 
+
+Partials:
+- a file of code that is used in multiple files, start with _ , ex. _forms.html.erb, rails knows that files that start with _ is a partial
+- call a partial by using "render 'form', blog: @blog" the blog part allows you put data in the form
+- can make a shared folder in the view folder for partials
+- to call a partial put `render file_path(don't need to put view b.rails already knows that)
+- ex. render 'shared/nav' ( don't need underscore when using render)
+
+Data Flow: the controller actions pass data to the views via instance variables
+Ex. in blog controller in new action you create a new instance of a blog and store it in a @blog, variable, from there it is passed to the new.html.erb template where @blog is now a transfered into blog,
+a local variable, it is used inside the _form partial as a local 
