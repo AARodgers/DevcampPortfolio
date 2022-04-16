@@ -27,9 +27,8 @@
     <%# yield gives way or lets you slide in any of the other templates that are being called, like when you click on the blog or portfolio link above%>
     <%= yield %>
 
-    <% if session[:source] %>
-      <p>Thanks for visiting me from <%= session[:source] %></p>
-    <% end %>
+    <%= source_helper("application") %>
+    <%= parameter is so layout is same as application layout%>
   </body>
 </html>
 

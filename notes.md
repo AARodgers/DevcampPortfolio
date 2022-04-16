@@ -28,6 +28,7 @@ Sessions:
   - ex. http://[::1]:3000/portfolio/4?q=twitter ( everything after the q is a query), if you inspect the session, you will see it in QUERY_STRING =
   - sessions are not very secure and can get hacked easily so never put important data like credit card nums etc in it
   - going to an incognito tab starts a new session
+  - [::1]:3000?q=facebook  use this to test sessions in an incognito window
 
 Null Object Pattern:
 - behavior you can do from controller to manage what websites if someone is logged in or if it is a guest
@@ -54,3 +55,19 @@ View Helpers:
 - typically want to leave conditional logic outside of views
 - How to know when to use a view helper vs. a partial: if their is logic that has conditionals ( if this than that) needed in the view and the majority of the
 code is ruby logic then use a view helper. If you have something like the nav bar where the majority of it is html, then use a partial
+
+Content Helpers:
+-  content helper methods can be used in a view
+- ex <%= content_tag :p, class: "my-special_class" do %>
+        Hi, I'm in a paragraph tag
+    <% end %>
+    Is the same thing as <p class: "my-special_class">Hi, I'm in a paragraph tag</p>
+    Can also pass in :h1, to wrap text in a h1 tag
+
+    will show the text in the home page, :p is passing in a paragragh, if click inspect on paragraph, will see that it generated html for it in browser
+
+- instead of writing:
+def sample_helper
+  "<p>sldkfjsdl</p>".html_safe
+end
+Write a content helper like:
