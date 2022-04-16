@@ -1,3 +1,6 @@
+Sample Users: email: glove@email.com, name: glove, pass: gloves
+
+
 - a virtual attribute lets you create a special attribute without putting it in the schema or doing a migration like 'first_name'
 - irb gives up a connection to the ruby vs. rails c which gives us access to the rails environment
 - bcrypt: encrpts passwords by salting them
@@ -33,12 +36,21 @@ Views:
 - by default Rails uses application layout file
 
 Partials:
-- a file of code that is used in multiple files, start with _ , ex. _forms.html.erb, rails knows that files that start with _ is a partial
+- a HTML file of code that is used in multiple files/views, start with _ , ex. _forms.html.erb, rails knows that files that start with _ is a partial
 - call a partial by using "render 'form', blog: @blog" the blog part allows you put data in the form
 - can make a shared folder in the view folder for partials
 - to call a partial put `render file_path(don't need to put view b.rails already knows that)
 - ex. render 'shared/nav' ( don't need underscore when using render)
 
+
 Data Flow: the controller actions pass data to the views via instance variables
 Ex. in blog controller in new action you create a new instance of a blog and store it in a @blog, variable, from there it is passed to the new.html.erb template where @blog is now a transfered into blog,
-a local variable, it is used inside the _form partial as a local 
+a local variable, it is used inside the _form partial as a local
+
+View Helpers:
+- are written in ruby and can be shared among views
+- can use the helpers folder
+- use when you have conditional logic like 'if current_user?' especially if it is used in multiple places
+- typically want to leave conditional logic outside of views
+- How to know when to use a view helper vs. a partial: if their is logic that has conditionals ( if this than that) needed in the view and the majority of the
+code is ruby logic then use a view helper. If you have something like the nav bar where the majority of it is html, then use a partial

@@ -17,16 +17,10 @@
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
 
+   <%# render this shared partial %>
     <%= render 'shared/nav', location: 'top' %>
-
-<%# you only want them to see logout button if they are already loggedin %>
-    <% if current_user.is_a?(User) %>
-<%# opposed to the OpenStruct object which will always be true, if it is User class means they have a log in%>
-      <%= link_to "Logout", destroy_user_session_path, method: :delete %>
-    <% else%>
-      <%= link_to "Register", new_user_registration_path %>
-      <%= link_to "Login", new_user_session_path %>
-    <% end %>
+    <%# is routed to ApplicationHelper and see if there is any method called login_helper %>
+    <%= login_helper %>
 
     <%# yield gives way or lets you slide in any of the other templates that are being called, like when you click on the blog or portfolio link above%>
     <%= yield %>
