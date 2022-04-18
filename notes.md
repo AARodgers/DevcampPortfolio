@@ -72,4 +72,8 @@ def sample_helper
 end
 Write a content helper like:
 
-- Convention over configuration: 
+- Convention over configuration:
+
+-ActionView Helper Methods(view helper methods):  see docs for all helper methods ex. "Published x hours ago" (distance_of_time_in_words), to phone number, <%= number_to_currency "150" %> => $150.00,
+<%= number_to_percentage "80.4" %> => 80.400%, <%= number_with_delimieter "15054647657" %> (adds commas
+to num)
