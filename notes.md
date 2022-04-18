@@ -71,3 +71,5 @@ def sample_helper
   "<p>sldkfjsdl</p>".html_safe
 end
 Write a content helper like:
+
+- Convention over configuration: 
