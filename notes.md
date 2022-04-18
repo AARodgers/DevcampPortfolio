@@ -74,6 +74,51 @@ Write a content helper like:
 
 - Convention over configuration:
 
--ActionView Helper Methods(view helper methods):  see docs for all helper methods ex. "Published x hours ago" (distance_of_time_in_words), to phone number, <%= number_to_currency "150" %> => $150.00,
-<%= number_to_percentage "80.4" %> => 80.400%, <%= number_with_delimieter "15054647657" %> (adds commas
-to num)
+-ActionView Helper Methods(view helper methods):  see docs for all helper methods
+  ex. "Published x hours ago" (distance_of_time_in_words), to phone number, <%= number_to_currency "150" %> => $150.00,
+  <%= number_to_percentage "80.4" %> => 80.400%, <%= number_with_delimieter "15054647657" %> (adds commas
+  to num)
+  - If start new app with rails new, rails db:create, rails db:migrate. If have controller name GuidesController, you would create a folder in views called guides and it
+  will look for a file in view called guides, if have method in controller called 'def book' you need to
+  make a file in guides called: book.html.erb, then in routes do: get 'guides/book'.
+  - Summary: you have a controller with an action name (name of method), the action name is wired to the
+  view file named the same thing, Controller name is mapped to view directory name and it will look for file with controller method name,
+
+  <hr> creates a horizontal line that separates sections
+
+  If have <%= render @blog %> but you want to implement something in that partial like a spacer_template
+  you need to explicitly say 'render partial: ' so would have: <%= render partial: @blogs, spacer_template: 'blog_ruler' %>
+
+  Can call in another style sheet by adding: <%= stylesheet_link_tag "the style sheet" %>
+
+  - Caching (if you have a slow loading page like a lot of html and css):
+    - rails let you wrap it all up in a cache (it's like a zip file), it is compiled for you and will
+    let you render it faster in browser.
+    - It saves the html to the clients browser, so be careful how/when you use it b. client might have old version of html even if you pushed up new code. Another reason for a slow load of a website is a
+    slow database query, can't fix that with cache b. it is server side
+    - Looks like:
+    <% cache do% >
+      <%= render partial: @blogs, spacer_template: 'blog_ruler' %>
+    <% end %>
+
+Professional DeBugging in Rails:
+1. Using puts:
+  a. If expected to see all blogs but didn't can put:
+    def index
+      @blogs = Blog.limit(2)
+      puts "*" * 500 (since it is hard to find what prints out in terminal along with everything else)
+      puts @blogs.inspect
+      puts "*" * 500
+      @page_title = "My Portfolio Blog"
+      # dynamically changes what it says on the tab on the browser
+    end
+    Then look in the terminal
+
+2. Gem - Byebug
+  a. gives you a working breakpoint ( it's like binding.pry where it stops the operation and you have a console to checkout what things are)
+  b. can type in variables or session to see what is being processed or params (output is #<ActionController::Parameters {"controller"=>"blogs", "action"=>"index"} permitted: false>)
+  c. if in byebug console and want to get out type: continue
+
+3. Pry - gem
+  a. need to install
+  b. 
