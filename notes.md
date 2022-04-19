@@ -121,4 +121,7 @@ Professional DeBugging in Rails:
 
 3. Pry - gem
   a. need to install
-  b. 
+  b. can put binding.pry in multiple places, see terminal notes for commands
+
+4. Error Management
+  a. 

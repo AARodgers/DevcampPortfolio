@@ -7,16 +7,29 @@ class User < ApplicationRecord
   # devise automatically requires an email and password but we want it to require a name too b. we
   # will be running methods on name and if they don't put in a name will get errors
 
-  validates_presence_of :name
+  # validates_presence_of :name
 
   def first_name
     # self means whenever we are instantiating a specific user, we are talking about them
     # split, splits the name into an array
     # first is array method and will grab first element in array
     self.name.split.first
+    end
   end
 
   def last_name
     self.name.split.last
   end
 end
+
+# just an example of how to implement a begin/rescue error
+# def get_facebook_messages
+#   begin
+#     contacts_fb
+#     @messages = retrieves_messages
+#   rescue IOError => e
+#     flash[:error] = "Error occured contacting Facebook: {e}"
+#   end
+# end
+# can go to Exception class for ruby and pick the errors you want rescued, this
+#method will only rescue IOErrors
