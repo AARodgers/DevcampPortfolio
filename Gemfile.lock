@@ -1,3 +1,9 @@
+GIT
+  remote: https://github.com/AARodgers/rodgers_view_tool
+  revision: 3abf1dc9431d12684752d20d26a92865baac6044
+  specs:
+    rodgers_view_tool (0.1.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -219,6 +225,7 @@ DEPENDENCIES
   puma (~> 5.0)
   rack-mini-profiler (~> 2.0)
   rails (~> 6.1.4, >= 6.1.4.4)
+  rodgers_view_tool!
   sass-rails (>= 6)
   spring
   turbolinks (~> 5)

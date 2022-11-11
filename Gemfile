@@ -54,6 +54,7 @@ group :development do
   # sure you have the correct version of sprockets-rails. Gems have their own gems they depend on.
   #NOTE: our application.css is not scss ('sass stylesheet', like it says it needs in bootstrap readme), you
   # need to change it to .scss
+  gem 'rodgers_view_tool', git: 'https://github.com/AARodgers/rodgers_view_tool'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

@@ -19,6 +19,10 @@ module ApplicationHelper
       content_tag(:p, greeting, class: "source-greeting")
     end
   end
+
+  def copyright_generator
+    RodgersViewTool::Renderer.copyright 'Amanda Rodgers', 'All rights reserved'
+  end
 end
 # source-greeting is a css class
 # add the parameter if you want it to show up differently on the main page vs. the blog or portfolio page
