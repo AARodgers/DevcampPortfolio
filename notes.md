@@ -1,5 +1,8 @@
 Sample Users: email: glove@email.com, name: glove, pass: gloves
 
+1.make a copie of app with the notes, make another copy to publish without notes
+2. Finish section 12 and 129: Publishing a gem to rubygems.org
+
 
 - a virtual attribute lets you create a special attribute without putting it in the schema or doing a migration like 'first_name'
 - irb gives up a connection to the ruby vs. rails c which gives us access to the rails environment
@@ -124,4 +127,4 @@ Professional DeBugging in Rails:
   b. can put binding.pry in multiple places, see terminal notes for commands
 
 4. Error Management
-  a. 
+  a.

@@ -1,4 +1,13 @@
 class User < ApplicationRecord
+  ############################################################################################
+  ## PeterGate Roles                                                                        ##
+  ## The :user role is added by default and shouldn't be included in this list.             ##
+  ## The :root_admin can access any page regardless of access settings. Use with caution!   ##
+  ## The multiple option can be set to true if you need users to have multiple roles.       ##
+  petergate(roles: [:admin, :editor], multiple: false)                                      ##
+  ############################################################################################ 
+ 
+
   # Include default devise modules. Others available are:
   # :confirmable (confirm they are the same person with their email), :lockable ( can lock someone out, say if they try logging
   # in 5x ), :timeoutable ( you can time out a user), :trackable and :omniauthable( integreate 3rd party logins from ex.Facebook or Google)
@@ -14,7 +23,6 @@ class User < ApplicationRecord
     # split, splits the name into an array
     # first is array method and will grab first element in array
     self.name.split.first
-    end
   end
 
   def last_name
