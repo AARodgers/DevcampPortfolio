@@ -14,7 +14,6 @@ class User < ApplicationRecord
     # split, splits the name into an array
     # first is array method and will grab first element in array
     self.name.split.first
-    end
   end
 
   def last_name

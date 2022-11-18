@@ -1,4 +1,5 @@
 Sample Users: email: glove@email.com, name: glove, pass: gloves
+random@email.com, name: randy, pass: random
 
 
 - a virtual attribute lets you create a special attribute without putting it in the schema or doing a migration like 'first_name'
@@ -124,4 +125,4 @@ Professional DeBugging in Rails:
   b. can put binding.pry in multiple places, see terminal notes for commands
 
 4. Error Management
-  a. 
+  a.
