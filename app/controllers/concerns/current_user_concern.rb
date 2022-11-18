@@ -6,11 +6,21 @@ module CurrentUserConcern
   end
 
   def guest_user
-    OpenStruct.new(name: "Guest User",
-                  first_name: "Guest",
-                  last_name: "User",
-                  email: "guest@example.com")
+    guest = GuestUser.new
+    guest.name = "Guest User"
+    guest.first_name = "Guest"
+    guest.last_name = "User"
+    guest.email = "guest@example.com"
+    guest
   end
+
+  # def guest_user
+  #   OpenStruct.new(name: "Guest User",
+  #                 first_name: "Guest",
+  #                 last_name: "User",
+  #                 email: "guest@example.com")
+  # end
+  # We aren't using this because it doesn't work with the petergate authorization gem
 end
 
 # other current_user is a devise method, this method will override it and be available to all models

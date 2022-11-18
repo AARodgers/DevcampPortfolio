@@ -1,4 +1,5 @@
 Sample Users: email: glove@email.com, name: glove, pass: gloves
+random@email.com, name: randy, pass: random
 
 1.make a copie of app with the notes, make another copy to publish without notes
 2. Finish section 12 and 129: Publishing a gem to rubygems.org
