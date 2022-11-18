@@ -45,6 +45,7 @@ group :development do
   gem 'spring'
   gem 'friendly_id', '~> 5.4.0'
   gem 'devise', '~> 4.2'
+  gem 'petergate', '~> 1.7'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
