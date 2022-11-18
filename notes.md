@@ -1,3 +1,9 @@
+Need to:
+1. Finish section 12 part 129: Publishing a gem to rubygems.org
+2. Moves these notes before publishing
+
+
+
 Sample Users: email: glove@email.com, name: glove, pass: gloves
 
 
@@ -124,4 +130,4 @@ Professional DeBugging in Rails:
   b. can put binding.pry in multiple places, see terminal notes for commands
 
 4. Error Management
-  a. 
+  a.
