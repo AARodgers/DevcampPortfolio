@@ -45,6 +45,16 @@ group :development do
   gem 'spring'
   gem 'friendly_id', '~> 5.4.0'
   gem 'devise', '~> 4.2'
+  # bootstrap runs in the background of the rails app so you don't have direct access to the code as a best
+  # practice so you don't change the code. If you wanted to change the code you could clone the gem (fork it), make
+  # changes and then use your own version. Another way to override is to go to config/initializers
+  gem 'bootstrap', '~> 5.1.3'
+  # Gemfile shows all the gems you installed or came with rails
+  # Gemfile.lock shows all of your dependencies, so when downloading bootstrap go to gemfile.lock to make
+  # sure you have the correct version of sprockets-rails. Gems have their own gems they depend on.
+  #NOTE: our application.css is not scss ('sass stylesheet', like it says it needs in bootstrap readme), you
+  # need to change it to .scss
+  gem 'rodgers_view_tool', git: 'https://github.com/AARodgers/rodgers_view_tool'
   gem 'petergate', '~> 1.7'
 end
 

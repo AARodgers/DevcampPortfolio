@@ -2,7 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
-body {
+/*body {
   background-color: black;
   color: white;
 }
@@ -11,3 +11,6 @@ body {
   color: red;
 }
 /* says you want to apply styles to any components that have the class top and that have a link (hence the a)*/
+
+// Custom bootstrap variables must be set or imported *before* bootstrap.
+@import "bootstrap";

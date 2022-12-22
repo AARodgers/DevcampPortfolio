@@ -1,3 +1,9 @@
+Need to:
+1. Finish section 12 part 129: Publishing a gem to rubygems.org
+2. Moves these notes before publishing
+
+
+
 Sample Users: email: glove@email.com, name: glove, pass: gloves
 Below works for login:
 random@email.com, name: randy, pass: random

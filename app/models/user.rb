@@ -16,7 +16,7 @@ class User < ApplicationRecord
   # devise automatically requires an email and password but we want it to require a name too b. we
   # will be running methods on name and if they don't put in a name will get errors
 
-  # validates_presence_of :name
+  validates_presence_of :name
 
   def first_name
     # self means whenever we are instantiating a specific user, we are talking about them

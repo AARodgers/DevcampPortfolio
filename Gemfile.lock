@@ -1,3 +1,9 @@
+GIT
+  remote: https://github.com/AARodgers/rodgers_view_tool
+  revision: 3abf1dc9431d12684752d20d26a92865baac6044
+  specs:
+    rodgers_view_tool (0.1.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -60,10 +66,16 @@ GEM
       minitest (>= 5.1)
       tzinfo (~> 2.0)
       zeitwerk (~> 2.3)
+    autoprefixer-rails (10.4.2.0)
+      execjs (~> 2)
     bcrypt (3.1.17)
     bindex (0.8.1)
     bootsnap (1.9.3)
       msgpack (~> 1.0)
+    bootstrap (5.1.3)
+      autoprefixer-rails (>= 9.1.0)
+      popper_js (>= 2.9.3, < 3)
+      sassc-rails (>= 2.0.0)
     builder (3.2.4)
     byebug (11.1.3)
     coderay (1.1.3)
@@ -76,6 +88,7 @@ GEM
       responders
       warden (~> 1.2.3)
     erubi (1.10.0)
+    execjs (2.8.1)
     ffi (1.15.4)
     friendly_id (5.4.2)
       activerecord (>= 4.0.0)
@@ -105,6 +118,7 @@ GEM
     petergate (1.9.1)
       activerecord (> 4.0.0)
     pg (1.2.3)
+    popper_js (2.9.3)
     pry (0.13.1)
       coderay (~> 1.1)
       method_source (~> 1.0)
@@ -202,6 +216,7 @@ PLATFORMS
 
 DEPENDENCIES
   bootsnap (>= 1.4.4)
+  bootstrap (~> 5.1.3)
   byebug
   devise (~> 4.2)
   friendly_id (~> 5.4.0)
@@ -213,6 +228,7 @@ DEPENDENCIES
   puma (~> 5.0)
   rack-mini-profiler (~> 2.0)
   rails (~> 6.1.4, >= 6.1.4.4)
+  rodgers_view_tool!
   sass-rails (>= 6)
   spring
   turbolinks (~> 5)
