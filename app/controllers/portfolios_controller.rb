@@ -2,6 +2,8 @@ class PortfoliosController < ApplicationController
   before_action :set_porfolio_item, only: [:edit, :update, :show, :destroy]
   #before you call any portfolio controller actions, call the method set_portfolio_item (found in private methods to this class), but only for those four actions
   layout 'portfolio'
+  access all: [:show, :index, :angular], user: {except: [:destroy, :new, :create, :update, :edit]}, site_admin: :all
+
 
   def index
     @portfolio_items = Portfolio.all

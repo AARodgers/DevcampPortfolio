@@ -1,8 +1,27 @@
 Sample Users: email: glove@email.com, name: glove, pass: gloves
+Below works for login:
 random@email.com, name: randy, pass: random
+
+Admin: email:test5@test.com, name: test5, pass: test5test5
+
+admin login:
+email: test@email.com
+name: nil
+pass: newpassword123
+(not admin)
+
+To make update a user to an admin: usr.update!(roles: "site_admin")
+
+admin = User.create(email: "test@email.com", role: "site_admin", name: "testname", password: "newpassword")
+
 
 1.make a copie of app with the notes, make another copy to publish without notes
 2. Finish section 12 and 129: Publishing a gem to rubygems.org
+
+Ruby Notes:
+- rails c for console ( can do User.first) and quit to stop console
+- pry   exit to exit
+- rails s to start server and ctrl C to stop it
 
 
 - a virtual attribute lets you create a special attribute without putting it in the schema or doing a migration like 'first_name'

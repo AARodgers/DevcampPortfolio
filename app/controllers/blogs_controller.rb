@@ -2,6 +2,11 @@ class BlogsController < ApplicationController
   before_action :set_blog, only: %i[ show edit update destroy toggle_status ]
   layout "blog"
   # tells what layout/stylesheet to use, layout is a method and "blog" is the arguement to that method
+  access all: [:show, :index], user: {except: [:destroy, :new, :create, :update, :edit]}, site_admin: :all
+  # from petergate gem, everyone can see the blogs, the 'user' (or commentor on the blog) can't do CRUD
+  # all means anyone including guest either logged in or out
+  # user is signed in and site_admin if the developer of the site
+
 
   # GET /blogs or /blogs.json
   def index
