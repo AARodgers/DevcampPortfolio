@@ -55,6 +55,7 @@ group :development do
   #NOTE: our application.css is not scss ('sass stylesheet', like it says it needs in bootstrap readme), you
   # need to change it to .scss
   gem 'rodgers_view_tool', git: 'https://github.com/AARodgers/rodgers_view_tool'
+  gem 'petergate', '~> 1.7'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
