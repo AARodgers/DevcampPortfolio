@@ -1,10 +1,10 @@
 <div class="<%= location %>">
 <%# location is a local variable that we can pass data into so that it can be used by the nav component %>
-  <div><%= link_to "Home", root_path %></div>
-  <div><%= link_to "About Me", about_me_path %></div>
-  <div><%= link_to "Contact", contact_path %></div>
-  <div><%= link_to "Blog", blogs_path %></div>
-  <div><%= link_to "Portfolio", portfolios_path %></div>
+  <%= link_to "Home", root_path %></div>
+  <%= link_to "About Me", about_me_path %>
+  <%= link_to "Contact", contact_path %>
+  <%= link_to "Blog", blogs_path %>
+  <%= link_to "Portfolio", portfolios_path %>
 </div>
 <%# to find out which route to use, in terminal do rails routes | grep logout and then add path to end and pass in the method delete %>
 <%# to find the proper route, in terminal do rails routes | grep pages and will see route methods%>

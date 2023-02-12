@@ -1,33 +1,40 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%=@page_title %></title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title><%= @page_title %></title>
     <%# is what is on tab in browser %>
-    <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <meta name="keywords" content="<%= @seo_keywords %>" />
-    <%# go to browser and click View PageSource, it shows the meta seo data%>
     <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+
+    <meta name="keywords" content="<%= @seo_keywords %>" />
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%# stylesheet_link_tag is connected to a css file(assets/stylesheets/application) you can import
     other stylesheets %>
+
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%# <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%# <meta name="viewport" content="width=device-width,initial-scale=1"/> %>
+    <%# go to browser and click View PageSource, it shows the meta seo data%>
   </head>
 
   <body>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+    <p class="notice"><%= notice %>
+    <p class="alert"><%= alert %>
+      <%# render this shared partial %>
+      <%= render 'shared/nav', location: 'top' %>
 
-   <%# render this shared partial %>
-    <%= render 'shared/nav', location: 'top' %>
-    <%# is routed to ApplicationHelper and see if there is any method called login_helper %>
-    <%= login_helper %>
+      <%= login_helper %>
+      <%# is routed to ApplicationHelper and see if there is any method called login_helper %>
+      <%# yield gives way or lets you slide in any of the other templates that are being called, like when you click on the blog or portfolio link above%>
 
-    <%# yield gives way or lets you slide in any of the other templates that are being called, like when you click on the blog or portfolio link above%>
-    <%= yield %>
-    <%= source_helper("application") %>
+      <%= yield %>
+
+      <%# <%= copyright_generator %>
+      <%# above needs fixing, throws an error for the copyright, see gem %>
+
+      <%= source_helper("application") %>
   </body>
 </html>
-
-<%# what you put in the body here will appear on every page that uses this layout, by default it will be all%>
