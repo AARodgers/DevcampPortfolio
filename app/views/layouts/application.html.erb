@@ -21,20 +21,26 @@
   </head>
 
   <body>
-    <p class="notice"><%= notice %>
-    <p class="alert"><%= alert %>
+    <div class="site-wrapper">
+
+      <div class="site-wrapper-inner">
+
+        <div class="cover-container">
       <%# render this shared partial %>
-      <%= render 'shared/nav', location: 'top' %>
+          <%= render 'shared/application_nav' %>
 
-      <%= login_helper %>
-      <%# is routed to ApplicationHelper and see if there is any method called login_helper %>
-      <%# yield gives way or lets you slide in any of the other templates that are being called, like when you click on the blog or portfolio link above%>
+          <%= login_helper %>
+          <%# is routed to ApplicationHelper and see if there is any method called login_helper %>
+          <%# yield gives way or lets you slide in any of the other templates that are being called, like when you click on the blog or portfolio link above%>
 
-      <%= yield %>
+          <%= yield %>
 
-      <%# <%= copyright_generator %>
-      <%# above needs fixing, throws an error for the copyright, see gem %>
+          <%# <%= copyright_generator %>
+          <%# above needs fixing, throws an error for the copyright, see gem %>
 
-      <%= source_helper("application") %>
+          <%= source_helper("application") %>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
