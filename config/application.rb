@@ -1,15 +1,12 @@
-require_relative "boot"
+require_relative 'boot'
 
 require "rails"
 # Pick the frameworks you want:
 require "active_model/railtie"
 require "active_job/railtie"
 require "active_record/railtie"
-require "active_storage/engine"
 require "action_controller/railtie"
 require "action_mailer/railtie"
-require "action_mailbox/engine"
-require "action_text/engine"
 require "action_view/railtie"
 require "action_cable/engine"
 require "sprockets/railtie"
@@ -21,27 +18,5 @@ Bundler.require(*Rails.groups)
 
 module DevcampPortfolio
   class Application < Rails::Application
-    # Initialize configuration defaults for originally generated Rails version.
-    config.load_defaults 6.1
-    # config.action_controller.
-    #   permit_all_parameters = true
-    # can put above in if want to allow any parameters in the forms but not recommended because a hacker
-    # can inject malicious code into database
-
-
-    # action_controller is a mini framework inside of rails
-    # this overrides all parameters
-    # can take out .permits ....etc b. this overides it, it is false by default
-
-    # Configuration for the application, engines, and railties goes here.
-    #
-    # These settings can be overridden in specific environments using the files
-    # in config/environments, which are processed later.
-    #
-    # config.time_zone = "Central Time (US & Canada)"
-    # config.eager_load_paths << Rails.root.join("extras")
-
-    # Don't generate system test files.
-    config.generators.system_tests = nil
   end
 end

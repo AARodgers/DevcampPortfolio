@@ -1,10 +1,8 @@
 class PortfoliosController < ApplicationController
-  before_action :set_porfolio_item, only: [:edit, :update, :show, :destroy]
-  #before you call any portfolio controller actions, call the method set_portfolio_item (found in private methods to this class), but only for those four actions
+  before_action :set_portfolio_item, only: [:edit, :show, :update, :destroy]
   layout 'portfolio'
   access all: [:show, :index, :angular], user: {except: [:destroy, :new, :create, :update, :edit]}, site_admin: :all
-
-
+  
   def index
     @portfolio_items = Portfolio.all
   end
@@ -23,7 +21,7 @@ class PortfoliosController < ApplicationController
 
     respond_to do |format|
       if @portfolio_item.save
-        format.html { redirect_to portfolios_path, notice: "Your portfolio item is now live." }
+        format.html { redirect_to portfolios_path, notice: 'Your portfolio item is now live.' }
       else
         format.html { render :new }
       end
@@ -36,7 +34,7 @@ class PortfoliosController < ApplicationController
   def update
     respond_to do |format|
       if @portfolio_item.update(portfolio_params)
-        format.html { redirect_to portfolios_path, notice: "The record was successfully updated." }
+        format.html { redirect_to portfolios_path, notice: 'The record successfully updated.' }
       else
         format.html { render :edit }
       end
@@ -47,23 +45,26 @@ class PortfoliosController < ApplicationController
   end
 
   def destroy
+    # Destroy/delete the record
     @portfolio_item.destroy
 
+    # Redirect
     respond_to do |format|
-      format.html { redirect_to portfolios_url, notice: "Record was removed." }
+      format.html { redirect_to portfolios_url, notice: 'Record was removed.' }
     end
   end
 
   private
-  # methods under private are only to be called within this class, other methods you can call outside of class
+
   def portfolio_params
     params.require(:portfolio).permit(:title,
                                       :subtitle,
                                       :body,
-                                      technologies_attributes: [:name])
+                                      technologies_attributes: [:name]
+                                     )
   end
 
-  def set_porfolio_item
+  def set_portfolio_item
     @portfolio_item = Portfolio.find(params[:id])
   end
 end

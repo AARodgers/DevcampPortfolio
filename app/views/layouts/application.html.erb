@@ -5,42 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <title><%= @page_title %></title>
-    <%# is what is on tab in browser %>
     <%= csrf_meta_tags %>
 
     <meta name="keywords" content="<%= @seo_keywords %>" />
 
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%# stylesheet_link_tag is connected to a css file(assets/stylesheets/application) you can import
-    other stylesheets %>
-
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <%# <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <%# <meta name="viewport" content="width=device-width,initial-scale=1"/> %>
-    <%# go to browser and click View PageSource, it shows the meta seo data%>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-    <div class="site-wrapper">
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
 
-      <div class="site-wrapper-inner">
+    <%= render "shared/nav", location: 'top' %>
 
-        <div class="cover-container">
-      <%# render this shared partial %>
-          <%= render 'shared/application_nav' %>
+    <%= login_helper %>
 
-          <%= login_helper %>
-          <%# is routed to ApplicationHelper and see if there is any method called login_helper %>
-          <%# yield gives way or lets you slide in any of the other templates that are being called, like when you click on the blog or portfolio link above%>
+    <%= yield %>
 
-          <%= yield %>
+    <%= copyright_generator %>
 
-          <%# <%= copyright_generator %>
-          <%# above needs fixing, throws an error for the copyright, see gem %>
-
-          <%= source_helper("application") %>
-        </div>
-      </div>
-    </div>
+    <%= source_helper("application") %>
   </body>
 </html>

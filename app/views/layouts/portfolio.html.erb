@@ -1,35 +1,25 @@
-<%# copy and paste application.html.erb file %>
-
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%=@page_title %></title>
-    <%# is what is on tab in browser %>
-    <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <meta name="keywords" content="<%= @seo_keywords %>" />
-    <%# go to browser and click View PageSource, it shows the meta seo data%>
+    <title><%= @page_title %></title>
     <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag 'portfolios', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <meta name="keywords" content="<%= @seo_keywords %>" />
+
+    <%= stylesheet_link_tag    'portfolios', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
 
-    <%= render 'shared/nav', location: 'top' %>
-    <%# top is a css classes, see scss files%>
+    <%= render "shared/nav", location: 'top' %>
 
     <%= login_helper %>
 
-    <%# yield gives way or lets you slide in any of the other templates that are being called, like when you click on the blog or portfolio link above%>
     <%= yield %>
 
     <%= source_helper("application") %>
-    <%# parameter is so layout is same as application layout%>
   </body>
 </html>
-
-<%# what you put in the body here will appear on every page that uses this layout, by default it will be all%>

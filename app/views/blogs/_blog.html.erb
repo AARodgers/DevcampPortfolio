@@ -1,12 +1,9 @@
 <tr>
-  <td><%= blog.title %></td>
+  <td><%= blog.title.upcase %></td>
   <td>Published <%= distance_of_time_in_words(blog.created_at, Time.now) %> ago</td>
-  <%# View helper method, takes in 2 arguements(time something was created, current/past or future time)%>
   <td><%= blog.body %></td>
   <td><%= link_to blog.status, toggle_status_blog_path(blog) %></td>
   <td><%= link_to 'Show', blog %></td>
   <td><%= link_to 'Edit', edit_blog_path(blog) if logged_in?(:site_admin) %></td>
   <td><%= link_to 'Delete Post', blog, method: :delete, data: { confirm: 'Are you sure?' } if logged_in?(:site_admin) %></td>
 </tr>
-<%# <tr> is rows and <th> is headers %>
-<%# you don't need an .each block here, rails knows to do the iteration for you%>
